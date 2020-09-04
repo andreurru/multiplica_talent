@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Colour Selector 1</title>
+		<link rel="stylesheet" href="style/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script>
+			$.getJSON("https://reqres.in/api/colors", function (datas) {
+  			console.log(datas);
+  			$(".name1").text(datas.data[0].name);
+  			$(".colores1").text(datas.data[0].color);
+  			$(".year1").text(datas.data[0].year);
+  			$(".pantone1").text(datas.data[0].pantone_value);
+  			$(".name2").text(datas.data[1].name);
+  			$(".colores2").text(datas.data[1].color);
+  			$(".year2").text(datas.data[1].year);
+  			$(".pantone2").text(datas.data[1].pantone_value);
+  			$(".name3").text(datas.data[2].name);
+  			$(".colores3").text(datas.data[2].color);
+  			$(".year3").text(datas.data[2].year);
+  			$(".pantone3").text(datas.data[2].pantone_value);
+  			$(".name4").text(datas.data[3].name);
+  			$(".colores4").text(datas.data[3].color);
+  			$(".year4").text(datas.data[3].year);
+  			$(".pantone4").text(datas.data[3].pantone_value);
+  			$(".name5").text(datas.data[4].name);
+  			$(".colores5").text(datas.data[4].color);
+  			$(".year5").text(datas.data[4].year);
+  			$(".pantone5").text(datas.data[4].pantone_value);
+  			$(".name6").text(datas.data[5].name);
+  			$(".colores6").text(datas.data[5].color);
+  			$(".year6").text(datas.data[5].year);
+  			$(".pantone6").text(datas.data[5].pantone_value);  			
+		});
+		</script>
+	</head>
+	<body style="background-color: #FECF92">
+		<div class="img1">
+            <img class="img" src="images/logo2.png">
+        </div>
+        <div class="ventana" id="vent" style="z-index: 100">
+        	<div id="cerrar"><a href="javascript:cerrar()"><img class="tache" src="images/x.png"></a></div>
+        	<h1> COPIADO! </h1>
+		</div>
+
+			<a href="javascript:abrir()">
+			<button  class="C1" onclick="copiarAlPortapapeles('colores1')"></button>
+			<h1 class="name1"></h1><
+			<p class="colores1" id="colores1"></p>
+			<h1 class="year1"></h1>
+			<h1 class="pantone1"></h1>
+			</a>
+		</div>
+		<div>
+			<a href="javascript:abrir()">
+			<button class="C2" onclick="copiarAlPortapapeles('colores2')"></button>
+			<h1 class="name2"></h1>
+			<p class="colores2" id="colores2"></p>
+			<h1 class="year2"></h1>
+			<h1 class="pantone2"></h1>
+			</a>
+		</div>
+		<div>
+			<a href="javascript:abrir()">
+			<button class="C3" onclick="copiarAlPortapapeles('colores3')"></button>
+			<h1 class="name3"></h1>
+			<h1 class="colores3" id="colores3"></h1>
+			<h1 class="year3"></h1>
+			<h1 class="pantone3"></h1>
+			</a>
+		</div>
+		<div>
+			<a href="javascript:abrir()">
+			<button class="C4" onclick="copiarAlPortapapeles('colores4')"></button>
+			<h1 class="name4"></h1>
+			<h1 class="colores4" id="colores4"></h1>
+			<h1 class="year4"></h1>
+			<h1 class="pantone4"></h1>
+			</a>
+		</div>
+		<div>
+			<a href="javascript:abrir()">
+			<button class="C5" onclick="copiarAlPortapapeles('colores5')"></button>
+			<h1 class="name5"></h1>
+			<h1 class="colores5" id="colores5"></h1>
+			<h1 class="year5"></h1>
+			<h1 class="pantone5"></h1>
+			</a>
+		</div>
+		<div>
+			<a href="javascript:abrir()">
+			<button class="C6" onclick="copiarAlPortapapeles('colores6')"></button>
+			<h1 class="name6"></h1>
+			<h1 class="colores6" id="colores6"></h1>
+			<h1 class="year6"></h1>
+			<h1 class="pantone6"></h1>
+			</a>
+		</div>
+		<div>
+			<button class="next gradient-button-1"  onclick="location.href='colorselector.html'">NEXT</button>
+		</div>
+		<script>
+			function copiarAlPortapapeles(id_elemento) {
+  			var aux = document.createElement("input");
+  			aux.setAttribute("value", document.getElementById(id_elemento).innerHTML);
+  			document.body.appendChild(aux);
+  			aux.select();
+  			document.execCommand("copy");
+  			document.body.removeChild(aux);
+			}
+		</script>
+		<script>
+			function abrir(){
+				document.getElementById("vent").style.display="block";
+			}
+
+			function cerrar(){
+				document.getElementById("vent").style.display="none";
+			}
+		</script>
+	</body>
+</html>
